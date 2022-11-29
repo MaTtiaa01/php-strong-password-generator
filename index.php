@@ -12,12 +12,13 @@ if (isset($_GET['length']) && is_numeric($_GET['length'])) {
         $password = generatePassword($_GET['length'], $_GET['true']);
     } elseif (!isset($_GET['true'])) {
         $true = '.';
-        $password = generatePassword($_GET['length'], $true);
+        $password = generatePassword($_GET['length'], $_GET['true']);
     }
 } else {
-    echo 'Type a number';
+    $password =  'Type a number';
 }
-var_dump($password);
+
+
 
 
 
@@ -39,7 +40,7 @@ var_dump($password);
 <body>
 
     <div class="container p-4 text-center">
-        <header>
+        <header class="bg-dark text-white py-4 mb-3">
             <h1 class="text-uppercase my-2">Password generetor</h1>
         </header>
         <main>
@@ -53,7 +54,7 @@ var_dump($password);
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="true" id="true">
                     <label class="form-check-label" for="true">
-                        si
+                        yes
                     </label>
                 </div>
                 <div class="form-check">

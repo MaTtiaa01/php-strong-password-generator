@@ -13,9 +13,22 @@
 
 function generatePassword($length, $true)
 {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
     $randomString = '';
+
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/.@?|>$%&(!';
+    $charactersLength = strlen($characters);
+
+    $charNumber = '0123456789';
+    $charNumberLength = strlen($charNumber);
+
+    $charLetter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charLetterLength = strlen($charLetter);
+
+    $charSymbols = '/.@?|>$%&(!';
+    $charSymbolsLength = strlen($charSymbols);
+
+
+
 
     if ($true === 'on') {
         for ($i = 0; $i < $length; $i++) {
@@ -29,6 +42,9 @@ function generatePassword($length, $true)
             }
         }
     }
+
+
+
 
 
     return $randomString;
