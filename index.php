@@ -9,6 +9,9 @@ if (isset($_GET['length']) && is_numeric($_GET['length'])) {
     if (!isset($_GET['true']) && !isset($_GET['false'])) {
         $password = 'choose yes or no';
     } elseif (isset($_GET['true'])) {
+        if (isset($_GET['letter'])) {
+            $password = generatePasswordLetter($_GET['length'], $_GET['true']);
+        }
         $password = generatePassword($_GET['length'], $_GET['true']);
     } elseif (!isset($_GET['true'])) {
         $true = '.';
@@ -70,13 +73,13 @@ if (isset($_GET['length']) && is_numeric($_GET['length'])) {
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" name="letter" id="letter" checked>
+                    <input class="form-check-input" type="checkbox" value="" name="letter" id="letter">
                     <label class="form-check-label" for="letter">
                         Lettere
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" name="numbers" id="numbers" checked>
+                    <input class="form-check-input" type="checkbox" value="" name="numbers" id="numbers">
                     <label class="form-check-label" for="numbers">
                         Numeri
                     </label>
